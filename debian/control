@@ -1,0 +1,31 @@
+Source: node-encoding
+Section: javascript
+Priority: optional
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Mathias Behrle <mbehrle@debian.org>
+Build-Depends: debhelper-compat (= 13)
+ , nodeunit <!nocheck>
+ , node-iconv <!nocheck>
+ , node-iconv-lite <!nocheck>
+ , dh-sequence-nodejs
+Standards-Version: 4.5.1
+Vcs-Browser: https://salsa.debian.org/js-team/node-encoding
+Vcs-Git: https://salsa.debian.org/js-team/node-encoding.git
+Homepage: https://github.com/andris9/encoding
+Testsuite: autopkgtest-pkg-nodejs
+Rules-Requires-Root: no
+
+Package: node-encoding
+Architecture: all
+Depends: ${misc:Depends}
+ , node-iconv-lite
+ , nodejs
+Multi-Arch: foreign
+Description: Convert encodings, uses iconv by default and fallbacks to iconv-lite if needed
+ encoding is a simple wrapper around
+ node-iconv (https://github.com/bnoordhuis/node-iconv) and
+ iconv-lite (https://github.com/ashtuchkin/iconv-lite/) to convert strings
+ from one encoding to another. If node-iconv is not available for some reason,
+ iconv-lite will be used instead of it as a fallback.
+ .
+ Node.js is an event-based server-side JavaScript engine.
